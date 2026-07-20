@@ -1,0 +1,81 @@
+/*==================================
+        COMPANY PROFILE
+==================================*/
+
+.company-profile{
+
+padding:100px 0;
+
+background:#0057B8;
+
+}
+
+.profile-box{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:40px;
+
+}
+
+.profile-content span{
+
+color:#F58220;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+}
+
+.profile-content h2{
+
+font-size:46px;
+
+color:#fff;
+
+margin:15px 0;
+
+}
+
+.profile-content p{
+
+color:#e9eef8;
+
+line-height:1.8;
+
+max-width:650px;
+
+}
+
+.profile-btn a{
+
+display:inline-block;
+
+padding:18px 40px;
+
+background:#F58220;
+
+color:#fff;
+
+text-decoration:none;
+
+border-radius:50px;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.profile-btn a:hover{
+
+background:#fff;
+
+color:#0057B8;
+
+}

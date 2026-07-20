@@ -1,0 +1,85 @@
+/* ==========================
+   DARK MODE VARIABLES
+========================== */
+
+body.dark-mode{
+
+    --primary:#4DA3FF;
+    --secondary:#F58220;
+
+    --bg:#0F172A;
+    --card:#1E293B;
+    --section:#111827;
+
+    --text:#F8FAFC;
+    --text-light:#CBD5E1;
+
+    background:var(--bg);
+    color:var(--text);
+
+    transition:.35s;
+}
+
+/* General */
+
+body.dark-mode section{
+
+    background:var(--bg)!important;
+
+}
+
+body.dark-mode .section-title h2,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4{
+
+    color:var(--text);
+
+}
+
+body.dark-mode p,
+body.dark-mode span{
+
+    color:var(--text-light);
+
+}
+
+/* Cards */
+
+body.dark-mode .service-card,
+body.dark-mode .about-card,
+body.dark-mode .leader-card,
+body.dark-mode .job-card,
+body.dark-mode .value-card,
+body.dark-mode .strength-card,
+body.dark-mode .career-form,
+body.dark-mode .stat-card{
+
+    background:var(--card);
+
+    box-shadow:none;
+
+}
+
+/* Inputs */
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select{
+
+    background:#1E293B;
+
+    color:white;
+
+    border:1px solid #334155;
+
+}
+
+/* Footer */
+
+body.dark-mode footer{
+
+    background:#020617;
+
+}

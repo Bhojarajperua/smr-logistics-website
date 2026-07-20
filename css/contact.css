@@ -1,0 +1,315 @@
+/*==================================
+        CONTACT HERO
+==================================*/
+
+.contact-hero{
+
+height:520px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+background:
+linear-gradient(rgba(0,43,91,.75),
+rgba(0, 42, 91, 0.534)),
+url("../images/about/about-banner.jpg") center/cover;
+
+}
+
+.contact-hero span{
+
+color:#F58220;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+}
+
+.contact-hero h1{
+
+font-size:60px;
+
+color:#fff;
+
+margin:20px 0;
+
+max-width:900px;
+
+margin-inline:auto;
+
+}
+
+.contact-hero p{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:1.9;
+
+color:#eee;
+
+}
+
+/*==================================
+      CONTACT INFO SECTION
+===================================*/
+.contact-info {
+    padding: 120px 0;
+    background: #fdfdfd; /* Subtle light background to let white cards stand out */
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; /* Enhanced spacing between cards */
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    
+    /* 3D Stacked Shadow Effect matching your image */
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.01),
+        0 10px 20px -5px rgba(0, 0, 0, 0.03),
+        0 25px 50px -12px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.01); /* Soft perimeter border tint */
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 8px 12px -2px rgba(0, 0, 0, 0.02),
+        0 20px 30px -5px rgba(0, 0, 0, 0.06),
+        0 35px 65px -10px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon Polish */
+.info-card i {
+    font-size: 55px; /* Matches your image icon proportion */
+    color: #0057B8;  /* SMR Blue Brand Color */
+    margin-bottom: 25px;
+    display: inline-block;
+    transition: all 0.4s ease;
+}
+
+.info-card:hover i {
+    color: #43A047; /* Subtle deeper shade on hover instead of generic orange */
+    transform: scale(1.05);
+}
+
+/* Card Heading Title */
+.info-card h3 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #002B5B;
+    letter-spacing: -0.3px;
+}
+
+/* Card Paragraph Text (Address & Hours) */
+.info-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4A5568;
+    font-weight: 500;
+}
+
+/* Active Link Elements (Phone, Email, Site URL) */
+.info-card a {
+    color: #0057B8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.info-card a:hover {
+    color: #002B5B;
+    text-decoration: underline;
+}
+
+/*==================================
+      RESPONSIVE GRID LAYOUT
+===================================*/
+@media (max-width: 992px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .contact-info {
+        padding: 60px 0;
+    }
+}
+
+/*==================================
+        QUOTE SECTION
+==================================*/
+
+.quote-section{
+
+padding:120px 0;
+
+background:#f8f9fb;
+
+}
+
+.quote-wrapper{
+
+display:grid;
+
+grid-template-columns:1fr 1.2fr;
+
+gap:70px;
+
+align-items:start;
+
+}
+
+.quote-content span{
+
+color:#F58220;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+}
+
+.quote-content h2{
+
+font-size:46px;
+
+color:#002B5B;
+
+margin:20px 0;
+
+}
+
+.quote-content p{
+
+line-height:1.9;
+
+color:#666;
+
+margin-bottom:30px;
+
+}
+
+.quote-content ul{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.quote-content li{
+
+margin-bottom:18px;
+
+font-size:17px;
+
+}
+
+.quote-form{
+
+background:#fff;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.form-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+margin-bottom:20px;
+
+}
+
+.form-grid input,
+.form-grid select,
+textarea{
+
+width:100%;
+
+padding:16px;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+font-size:15px;
+
+}
+
+textarea{
+
+resize:vertical;
+
+margin-bottom:20px;
+
+}
+
+.quote-form button{
+
+width:100%;
+
+padding:18px;
+
+background:#0057B8;
+
+color:#fff;
+
+border:none;
+
+border-radius:10px;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.quote-form button:hover{
+
+background:#43A047;
+
+}

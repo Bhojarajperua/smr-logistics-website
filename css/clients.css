@@ -1,0 +1,75 @@
+/*==================================
+        CLIENTS
+==================================*/
+
+.clients{
+
+    padding:120px 0;
+
+    background:#fff;
+
+}
+
+.client-slider{
+
+    overflow:hidden;
+
+    margin-top:60px;
+
+}
+
+.client-track{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:70px;
+
+    width:max-content;
+
+    animation:scrollClients 28s linear infinite;
+
+}
+
+.client-track img{
+
+    width:170px;
+
+    height:90px;
+
+    object-fit:contain;
+
+    filter:grayscale(100%);
+
+    opacity:.65;
+
+    transition:.35s;
+
+}
+
+.client-track img:hover{
+
+    filter:none;
+
+    opacity:1;
+
+    transform:scale(1.08);
+
+}
+
+@keyframes scrollClients{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}

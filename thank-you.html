@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | SMR Roadlines</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <!-- Link your existing global styling templates -->
+    <link rel="stylesheet" href="css/variables.css">
+    
+    <style>
+        /* Dedicated Thank You Page Layout */
+        .thank-you-wrapper {
+            background: #fdfdfd;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .thank-you-card {
+            background: #ffffff;
+            padding: 60px 40px;
+            border-radius: 24px;
+            text-align: center;
+            max-width: 550px;
+            width: 100%;
+            /* 3D Stacked Shadow Effect matching your contact layout card style */
+            box-shadow: 
+                0 4px 6px -1px rgba(0, 0, 0, 0.01),
+                0 10px 20px -5px rgba(0, 0, 0, 0.03),
+                0 25px 50px -12px rgba(0, 0, 0, 0.06),
+                0 0 0 1px rgba(0, 0, 0, 0.01);
+        }
+
+        /* Success Verification Badge Animation */
+        .success-icon-box {
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 87, 184, 0.05); /* SMR Blue Tint */
+            color: #0057B8; /* SMR Blue */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            margin: 0 auto 30px auto;
+            animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+
+        .thank-you-card h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 42px;
+            color: #002B5B;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .thank-you-card p {
+            color: #4A5568;
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        /* Return Action button layout block */
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0057B8;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 87, 184, 0.2);
+        }
+
+        .home-btn:hover {
+            background: #002B5B;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 43, 91, 0.3);
+        }
+
+        /* Countdown timer tracking notification text */
+        .redirect-note {
+            font-size: 13px !important;
+            color: #a0aec0 !important;
+            margin-top: 25px;
+            margin-bottom: 0 !important;
+        }
+
+        #countdown {
+            font-weight: 700;
+            color: #0057B8;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+    <link rel="stylesheet" href="css/dark.css">
+</head>
+<body>
+
+    <main class="thank-you-wrapper">
+        <div class="thank-you-card">
+            
+            <div class="success-icon-box">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            
+            <h1>Request Submitted!</h1>
+            <p>
+                Thank you for contacting SMR Roadlines. Your quote details have been logged into our distribution network pipeline successfully. A confirmation message has been dispatched to your email inbox.
+            </p>
+            
+            <a href="index.html" class="home-btn">
+                <i class="fa-solid fa-arrow-left"></i> Return To Homepage
+            </a>
+            
+            <p class="redirect-note">
+                Auto-redirecting to homepage in <span id="countdown">5</span> seconds...
+            </p>
+            
+        </div>
+    </main>
+
+    <script>
+        // Automatic timed screen routing fallback redirect engine
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const interval = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(interval);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+    </script>
+
+<script src="js/darkmode.js"></script>
+</body>
+</html>

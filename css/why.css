@@ -1,0 +1,101 @@
+/*==================================
+        WHY CHOOSE SMR
+==================================*/
+
+.why-smr{
+
+    padding:120px 0;
+
+    background:#F7F9FC;
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.why-card{
+
+    background:#fff;
+
+    padding:40px 30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+    background:#0057B8;
+
+}
+
+.why-card:hover h3,
+
+.why-card:hover p{
+
+    color:#fff;
+
+}
+
+.why-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    background:#EAF3FF;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:36px;
+
+    transition:.35s;
+
+}
+
+.why-card:hover .why-icon{
+
+    background:#43A047;
+
+}
+
+.why-card h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.why-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}

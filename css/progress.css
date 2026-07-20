@@ -1,0 +1,23 @@
+/*==================================
+        SCROLL PROGRESS BAR
+==================================*/
+
+#progress-bar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:5px;
+
+width:0;
+
+background:linear-gradient(90deg,#0057B8,#F58220);
+
+z-index:999999;
+
+transition:width .1s linear;
+
+}

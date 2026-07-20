@@ -1,0 +1,157 @@
+/*==================================
+        CONTACT CTA
+==================================*/
+
+.cta{
+
+    padding:120px 0;
+
+    background:#F7F9FC;
+
+}
+
+.cta-box{
+
+    background:linear-gradient(135deg,#0057B8,#0079F2);
+
+    border-radius:30px;
+
+    padding:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:#fff;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.cta-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50%;
+
+    top:-140px;
+
+    right:-100px;
+
+}
+
+.cta-content{
+
+    max-width:650px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.cta-content span{
+
+    color:#90EE90;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+}
+
+.cta-content h2{
+
+    color:#fff;
+
+    font-size:54px;
+
+    margin:18px 0;
+
+}
+
+.cta-content p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.cta-btn{
+
+    background:#43A047;
+
+    color:#fff;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    text-align:center;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.cta-btn:hover{
+
+    background:#fff;
+
+    color:#0057B8;
+
+}
+
+.call-btn{
+
+    border:2px solid #fff;
+
+    color:#fff;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    text-align:center;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.call-btn:hover{
+
+    background:#fff;
+
+    color:#0057B8;
+
+}

@@ -1,0 +1,77 @@
+/*==================================
+      ACHIEVEMENTS
+==================================*/
+
+.achievements{
+
+    padding:120px 0;
+
+    background:#ffffff;
+
+}
+
+.achievement-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.achievement-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    border-top:5px solid #0057B8;
+
+}
+
+.achievement-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.15);
+
+}
+
+.achievement-icon{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.achievement-card h3{
+
+    font-size:40px;
+
+    color:#0057B8;
+
+    margin-bottom:10px;
+
+}
+
+.achievement-card p{
+
+    color:#666;
+
+    font-size:17px;
+
+    line-height:1.6;
+
+}

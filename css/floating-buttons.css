@@ -1,0 +1,131 @@
+/*==================================
+        FLOATING BUTTONS
+==================================*/
+
+.floating-contact{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    z-index:999;
+
+}
+
+.whatsapp-btn,
+
+.call-btn-float{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+}
+
+.whatsapp-btn{
+
+    background:#25D366;
+
+}
+
+.call-btn-float{
+
+    background:#0057B8;
+
+}
+
+.whatsapp-btn:hover{
+
+    transform:translateY(-6px) scale(1.08);
+
+}
+
+.call-btn-float:hover{
+
+    background:#43A047;
+
+    transform:translateY(-6px) scale(1.08);
+
+}
+
+.whatsapp-btn::before,
+
+.call-btn-float::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    animation:pulse 2s infinite;
+
+}
+
+.whatsapp-btn::before{
+
+    background:rgba(37,211,102,.35);
+
+}
+
+.call-btn-float::before{
+
+    background:rgba(0,87,184,.25);
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.7;
+
+    }
+
+    70%{
+
+        transform:scale(1.7);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
