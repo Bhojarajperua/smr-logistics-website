@@ -6,15 +6,15 @@
 
     position:fixed;
 
-    top:15px;
+    top:30px;
 
     left:50%;
 
     transform:translateX(-50%);
 
-    width:94%;
+    width:88%;
 
-    max-width:1450px;
+    max-width:1350px;
 
     z-index:9999;
 
@@ -24,7 +24,7 @@
 
     -webkit-backdrop-filter:blur(18px);
 
-    border-radius:60px;
+    border-radius:45px;
 
     box-shadow:0 15px 40px rgba(0,0,0,.12);
 
@@ -54,9 +54,9 @@
 
     justify-content:space-between;
 
-    height:90px;
+    height:68px;
 
-    padding:0 22px;
+    padding:0 8px;
 
 }
 
@@ -70,11 +70,15 @@
 
     align-items:center;
 
+    margin-left:8px;
+
 }
 
 .logo img{
 
-    width:190px;
+    height:55px;
+
+    width:auto;
 
     transition:.35s;
 
@@ -90,13 +94,25 @@
           NAVIGATION
 ===============================*/
 
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-right:8px;
+
+}
+
 nav ul{
 
     display:flex;
 
     align-items:center;
 
-    gap:40px;
+    gap:30px;
 
 }
 
@@ -110,7 +126,7 @@ nav ul li a{
 
     color:var(--heading);
 
-    font-size:15px;
+    font-size:14px;
 
     font-weight:600;
 
@@ -172,7 +188,9 @@ nav ul li a:hover{
 
     color:#fff;
 
-    padding:14px 28px;
+    padding:10px 22px;
+
+    font-size: 15px;
 
     border-radius:50px;
 
@@ -251,9 +269,9 @@ nav ul li a:hover{
 /* Dark Mode */
 .dark-toggle{
 
-width:45px;
+width:40px;
 
-height:45px;
+height:40px;
 
 border:none;
 
@@ -265,7 +283,7 @@ color:white;
 
 cursor:pointer;
 
-font-size:18px;
+font-size:16px;
 
 display:flex;
 
