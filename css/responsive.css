@@ -1366,3 +1366,38 @@ grid-template-columns:1fr;
 }
 
 }
+/*==============================
+    MOBILE FIX
+===============================*/
+
+@media (max-width:992px){
+
+    .network-wrapper{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .network-details{
+        text-align:center;
+    }
+
+    .network-map{
+        overflow:hidden;
+        border-radius:20px;
+    }
+
+    .info-card{
+        display:none;
+    }
+
+    .stat-box{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media (max-width:600px){
+
+    .stat-box{
+        grid-template-columns:1fr;
+    }
+}

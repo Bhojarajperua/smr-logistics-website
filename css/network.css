@@ -20,7 +20,11 @@ align-items:center;
 
 .network-map img{
 
+display:block;
+
 width:100%;
+
+height:auto;
 
 border-radius:20px;
 
