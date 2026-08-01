@@ -152,6 +152,34 @@
 /*=====================================
         HERO RESPONSIVE
 ======================================*/
+@media (max-height:800px){
+
+.hero-content h1{
+    font-size:60px;
+}
+
+.hero-text{
+    font-size:18px;
+    margin-top:18px;
+}
+
+.hero-buttons{
+    margin-top:25px;
+}
+
+.hero-stats{
+    bottom:10px;
+}
+
+.stat-box{
+    padding:18px;
+}
+
+.stat-box h2{
+    font-size:34px;
+}
+
+}
 @media (max-width:768px){
 
 .hero{
