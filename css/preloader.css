@@ -1,108 +1,757 @@
-/*==================================
+/*=====================================
         PRELOADER
-==================================*/
+======================================*/
 
 #preloader{
 
     position:fixed;
-
-    top:0;
-    left:0;
+    inset:0;
 
     width:100%;
     height:100vh;
 
-    background:#ffffff;
-
     display:flex;
-
+    flex-direction:column;
     justify-content:center;
     align-items:center;
 
+    overflow:hidden;
+
     z-index:999999;
 
-    transition:.8s;
+    background:#fff;
 
 }
 
-.loader{
+/*=====================================
+    Animated Gradient Background
+======================================*/
 
-    text-align:center;
+.preloader-bg{
 
-}
+    position:absolute;
+    inset:0;
 
-.loader img{
+    width:100%;
+    height:100%;
 
-    width:220px;
-
-    animation:logoFloat 2s infinite ease-in-out;
-
-}
-
-.loading-bar{
-
-    width:220px;
-
-    height:6px;
-
-    background:#ddd;
-
-    margin-top:25px;
-
-    border-radius:50px;
+    background:linear-gradient(
+        135deg,
+        #f8fcff 0%,
+        #edf7ff 35%,
+        #d8ecff 70%,
+        #f8fcff 100%
+    );
 
     overflow:hidden;
 
 }
+.preloader-bg{
+    z-index:1;
+}
 
-.loading-bar span{
+.world-map{
+    z-index:2;
+}
 
-    display:block;
+.hud{
+    z-index:5;
+}
 
-    width:0;
+.logo-panel{
+    z-index:10;
+}
 
-    height:100%;
+.progress-container{
+    z-index:10;
+}
 
-    background:#0057B8;
+.loading-text{
+    z-index:10;
+}
 
-    animation:loading 2s linear forwards;
+/* Gradient Animation */
+
+@keyframes bgMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
 
 }
 
-@keyframes loading{
 
-0%{
+.preloader-bg::after{
 
-width:0;
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:rgba(47,128,237,.18);
+
+    filter:blur(140px);
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    animation:pulseGlow 6s ease-in-out infinite;
 
 }
 
-100%{
+@keyframes pulseGlow{
 
-width:100%;
+0%,100%{
 
-}
-
-}
-
-@keyframes logoFloat{
-
-0%{
-
-transform:translateY(0);
+    transform:translate(-50%,-50%) scale(1);
 
 }
 
 50%{
 
-transform:translateY(-10px);
+    transform:translate(-50%,-50%) scale(1.2);
+
+}
+
+}
+/*=====================================
+        WORLD MAP
+======================================*/
+
+.world-map{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center;
+
+    opacity:100%;
+
+    pointer-events:none;
+    user-select:none;
+
+    filter:
+        brightness(1.05)
+        contrast(1.05)
+        drop-shadow(0 0 40px rgba(47,128,237,.25));
+
+    animation:mapFloat 8s ease-in-out infinite;
+}
+
+@keyframes mapFloat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .world-map{
+
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        opacity:100%;
+
+    }
+
+}
+/*=====================================
+            AI HUD
+======================================*/
+
+.hud{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:420px;
+    height:420px;
+
+    pointer-events:none;
+
+}
+
+/* Common Ring */
+
+.ring{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    border:2px solid rgba(0,140,255,.25);
+
+    box-shadow:
+    0 0 15px rgba(0,140,255,.35),
+    inset 0 0 12px rgba(0,140,255,.25);
+
+}
+.ring1{
+
+    width:380px;
+    height:380px;
+
+    animation:
+    rotateClock 16s linear infinite;
+
+}
+.ring2{
+
+    width:300px;
+    height:300px;
+
+    border-style:dashed;
+
+    animation:
+    rotateAnti 12s linear infinite;
+
+}
+.ring3{
+
+    width:220px;
+    height:220px;
+
+    border-width:3px;
+
+    animation:
+    rotateClock 8s linear infinite;
+
+}
+.ring4{
+
+    width:150px;
+    height:150px;
+
+    border-style:dotted;
+
+    animation:
+    rotateAnti 5s linear infinite;
+
+}
+@keyframes rotateClock{
+
+from{
+
+    transform:
+    translate(-50%,-50%)
+    rotate(0deg);
+
+}
+
+to{
+
+    transform:
+    translate(-50%,-50%)
+    rotate(360deg);
+
+}
+
+}
+
+@keyframes rotateAnti{
+
+from{
+
+    transform:
+    translate(-50%,-50%)
+    rotate(360deg);
+
+}
+
+to{
+
+    transform:
+    translate(-50%,-50%)
+    rotate(0deg);
+
+}
+
+}
+@media(max-width:768px){
+
+.hud{
+
+    width:280px;
+    height:280px;
+
+}
+
+.ring1{
+
+    width:260px;
+    height:260px;
+
+}
+
+.ring2{
+
+    width:210px;
+    height:210px;
+
+}
+
+.ring3{
+
+    width:160px;
+    height:160px;
+
+}
+
+.ring4{
+
+    width:110px;
+    height:110px;
+
+}
+
+}
+/*=====================================
+        GLASS LOGO PANEL
+======================================*/
+
+.logo-panel{
+
+    position:relative;
+
+    width:320px;
+    height:180px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    box-shadow:
+        0 10px 40px rgba(0,100,255,.15),
+        inset 0 0 20px rgba(255,255,255,.25);
+
+    overflow:hidden;
+
+    z-index:20;
+
+    animation:panelFloat 4s ease-in-out infinite;
+
+}
+.logo-panel img{
+
+    width:220px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+.logo-panel::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    border-radius:28px;
+
+    padding:2px;
+
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #00b7ff,
+        #ffffff,
+        #2F80ED
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+}
+.logo-panel::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40%;
+    left:-60%;
+
+    width:80px;
+    height:220%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+    );
+
+    transform:rotate(18deg);
+
+    animation:scanner 2.8s linear infinite;
+
+}
+@keyframes scanner{
+
+0%{
+
+    left:-60%;
 
 }
 
 100%{
 
-transform:translateY(0);
+    left:170%;
 
 }
+
+}
+@keyframes panelFloat{
+
+0%,100%{
+
+    transform:translateY(0);
+
+}
+
+50%{
+
+    transform:translateY(-8px);
+
+}
+
+}
+@media(max-width:768px){
+
+.logo-panel{
+
+    width:260px;
+    height:150px;
+
+}
+
+.logo-panel img{
+
+    width:180px;
+
+}
+
+}
+/*=====================================
+        PROGRESS BAR
+======================================*/
+
+.progress-container{
+
+    margin-top:45px;
+
+    width:420px;
+    max-width:90%;
+
+}
+
+.progress-track{
+
+    width:100%;
+    height:40px;
+
+    background:rgba(255,255,255,.18);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    position:relative;
+
+}
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    position:relative;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #00B7FF,
+        #2F80ED,
+        #6EC6FF
+    );
+
+    box-shadow:
+        0 0 20px rgba(47,128,237,.7);
+
+}
+/*=====================================
+            TRUCK
+======================================*/
+
+.truck{
+
+    position:absolute;
+
+    right:-55px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:90px;
+
+    filter:
+
+    drop-shadow(0 5px 12px rgba(0,0,0,.25));
+
+}
+/*=====================================
+        PROGRESS SHINE
+======================================*/
+
+.progress-fill::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-35%;
+
+    width:35%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.9),
+        transparent
+    );
+
+    animation:shine 1.8s linear infinite;
+
+}
+
+@keyframes shine{
+
+0%{
+
+    left:-35%;
+
+}
+
+100%{
+
+    left:130%;
+
+}
+
+}
+.loading-text{
+
+    margin-top:40px;
+
+    color:#0b5ed7;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    animation:textGlow 2s ease-in-out infinite;
+
+}
+
+@keyframes textGlow{
+
+0%,100%{
+
+    opacity:.7;
+
+    text-shadow:0 0 8px rgba(47,128,237,.25);
+
+}
+
+50%{
+
+    opacity:1;
+
+    text-shadow:
+        0 0 15px rgba(47,128,237,.6),
+        0 0 30px rgba(47,128,237,.3);
+
+}
+
+}
+.truck{
+
+    animation:truckBounce .8s ease-in-out infinite;
+
+}
+
+@keyframes truckBounce{
+
+0%,100%{
+
+    transform:translateY(-50%);
+
+}
+
+50%{
+
+    transform:translateY(-56%);
+
+}
+
+}
+/*=====================================
+        PARTICLES
+======================================*/
+
+.particles{
+
+    position:absolute;
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.particles span{
+
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    background:#66c7ff;
+
+    border-radius:50%;
+
+    opacity:.4;
+
+    animation:floatParticle 10s linear infinite;
+
+}
+
+.particles span:nth-child(1){left:10%;top:90%;animation-delay:0s;}
+.particles span:nth-child(2){left:22%;top:95%;animation-delay:1s;}
+.particles span:nth-child(3){left:35%;top:88%;animation-delay:2s;}
+.particles span:nth-child(4){left:48%;top:92%;animation-delay:3s;}
+.particles span:nth-child(5){left:60%;top:90%;animation-delay:4s;}
+.particles span:nth-child(6){left:72%;top:96%;animation-delay:5s;}
+.particles span:nth-child(7){left:80%;top:91%;animation-delay:6s;}
+.particles span:nth-child(8){left:90%;top:94%;animation-delay:7s;}
+.particles span:nth-child(9){left:55%;top:98%;animation-delay:8s;}
+.particles span:nth-child(10){left:15%;top:97%;animation-delay:9s;}
+
+@keyframes floatParticle{
+
+0%{
+
+    transform:translateY(0) scale(1);
+    opacity:0;
+
+}
+
+20%{
+
+    opacity:.5;
+
+}
+
+100%{
+
+    transform:translateY(-900px) scale(0);
+
+    opacity:0;
+
+}
+
+}
+/*=====================================
+        PRELOADER HIDE
+======================================*/
+
+#preloader.hide{
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:scale(1.08);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        visibility .8s;
+
+}
+
+#preloader{
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+body.loading{
+
+    overflow:hidden;
 
 }

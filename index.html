@@ -82,19 +82,68 @@ href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
 <body>
 
-    <!--==================================
+<!-- ===========================
         PRELOADER
-===================================-->
-
+============================ -->
 <div id="preloader">
 
-    <div class="loader">
+    <!-- Animated Background -->
+    <div class="preloader-bg"></div>
+    <div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 
-        <img src="Logo/SMRLogo2.png" alt="SMR Logo">
+    <!-- World Map -->
+    <img src="images/preloader/map.png"
+         class="world-map"
+         alt="World Map">
 
-        <div class="loading-bar">
+    <!-- AI HUD Rings -->
+<div class="hud">
 
-            <span></span>
+    <span class="ring ring1"></span>
+
+    <span class="ring ring2"></span>
+
+    <span class="ring ring3"></span>
+
+    <span class="ring ring4"></span>
+
+</div>
+
+    <!-- Logo Panel -->
+    <div class="logo-panel">
+
+        <img src="images/preloader/SMRLogo.png"
+             alt="SMR Logo">
+
+    </div>
+
+    <!-- Loading Text -->
+    <h2 class="loading-text">
+        Loading India's Logistics Network...
+    </h2>
+
+    <!-- Progress -->
+    <!-- Progress Bar -->
+<div class="progress-container">
+
+    <div class="progress-track">
+
+        <div class="progress-fill">
+
+            <img src="images/preloader/truck.png"
+                 class="truck"
+                 alt="Truck">
 
         </div>
 
@@ -102,6 +151,7 @@ href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
 </div>
 
+</div>
 <!-- ==========================================
         SCROLL PROGRESS BAR
 ========================================== -->
@@ -1634,7 +1684,7 @@ href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     </a>
 
 </div>
-
+     <script src="js/preloader.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/script.js"></script>
     <script src="js/darkmode.js"></script>

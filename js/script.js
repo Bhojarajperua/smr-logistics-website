@@ -68,7 +68,7 @@ loader.style.opacity="0";
 
 loader.style.visibility="hidden";
 
-},500);
+},3800);
 
 });
 
